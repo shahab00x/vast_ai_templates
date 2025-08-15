@@ -213,4 +213,7 @@ echo ""
 echo "To start: /workspace/start_comfyui.sh"
 echo "Or ComfyUI will auto-start if using the template correctly"
 echo ""
+
+exec bash /workspace/start_comfyui.sh
+
 EOF
