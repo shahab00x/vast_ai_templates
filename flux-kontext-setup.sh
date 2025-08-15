@@ -44,6 +44,13 @@ fi
 echo "Using COMFY_ROOT=$COMFY_ROOT"
 cd "$COMFY_ROOT"
 echo "Assuming base image provides Python, PyTorch, and ComfyUI dependencies."
+echo "Ensuring ComfyUI Python requirements are satisfied..."
+"$PYTHON_BIN" -m pip install -r "$COMFY_ROOT/requirements.txt" || true
+# Explicitly ensure torchsde is present (needed by k-diffusion)
+if ! "$PYTHON_BIN" -c "import importlib.util as iu; import sys; sys.exit(0 if iu.find_spec('torchsde') else 1)"; then
+  echo "Installing missing dependency: torchsde"
+  "$PYTHON_BIN" -m pip install torchsde
+fi
 
 echo "Creating model directories..."
 mkdir -p models/unet
