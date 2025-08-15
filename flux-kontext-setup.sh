@@ -3,6 +3,8 @@ set -e
 
 echo "=== Starting Flux Kontext Setup ==="
 mkdir -p /workspace
+git clone https://github.com/comfyanonymous/ComfyUI.git
+
 # Ensure we're in the right directory
 cd /workspace/ComfyUI
 
