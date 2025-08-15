@@ -2,7 +2,7 @@
 set -e
 
 echo "=== Starting Flux Kontext Setup ==="
-
+mkdir -p /workspace
 # Ensure we're in the right directory
 cd /workspace/ComfyUI
 
