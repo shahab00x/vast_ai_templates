@@ -5,10 +5,11 @@ echo "=== Starting Flux Kontext Setup ==="
 mkdir -p /workspace
 
 # Ensure we're in the right directory
-cd /workspace/ComfyUI
+cd /workspace/
 
 git clone https://github.com/comfyanonymous/ComfyUI.git
 
+cd ComfyUI
 echo "Creating model directories..."
 mkdir -p models/unet
 mkdir -p models/vae 
