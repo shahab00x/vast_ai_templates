@@ -3,10 +3,11 @@ set -e
 
 echo "=== Starting Flux Kontext Setup ==="
 mkdir -p /workspace
-git clone https://github.com/comfyanonymous/ComfyUI.git
 
 # Ensure we're in the right directory
 cd /workspace/ComfyUI
+
+git clone https://github.com/comfyanonymous/ComfyUI.git
 
 echo "Creating model directories..."
 mkdir -p models/unet
@@ -215,7 +216,6 @@ echo ""
 echo "To start: /workspace/start_comfyui.sh"
 echo "Or ComfyUI will auto-start if using the template correctly"
 echo ""
+EOF
 
 exec bash /workspace/start_comfyui.sh
-
-EOF
